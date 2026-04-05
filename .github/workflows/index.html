@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium portfolio — S. DAVID, AI Engineer & Frontend Developer." />
+  
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#0d0d0d" />
+  
+  <title>S. DAVID | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-panel pl-top"></div>
+    <div class="pl-panel pl-bottom"></div>
+
+    <div class="pl-inner">
+      <div class="pl-name">S<span>.</span>DAVID</div>
+      <div class="pl-rule"></div>
+      <div class="pl-meta">
+        <span class="pl-label">Loading</span>
+        <span id="pl-num">000</span>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" data-to="hero"><span></span></a>
+
+    <ul class="nav-links">
+      <li><a href="#about"    data-to="about">About</a></li>
+      <li><a href="#projects" data-to="projects">Projects</a></li>
+      <li><a href="#video"    data-to="video">Work</a></li>
+      <li><a href="#contact"  data-to="contact">Contact</a></li>
+    </ul>
+
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#about"    data-to="about">About</a>
+    <a href="#projects" data-to="projects">Projects</a>
+    <a href="#video"    data-to="video">Work</a>
+    <a href="#contact"  data-to="contact">Contact</a>
+  </div>
+
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Portfolio — Bangalore, India</span>
+      <h1 class="hero-name">
+        Hi, I'm<br><em>S. DAVID</em>
+      </h1>
+
+      <p class="hero-role">
+        <span id="tw-text"></span><span id="tw-cursor" aria-hidden="true"></span>
+      </p>
+
+      <p class="hero-tagline">
+        Crafting digital experiences at the intersection of AI-driven systems, 
+        UI/UX precision, and compelling visual storytelling.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary" data-to="projects">View Projects</a>
+        <a href="#contact"  class="btn btn-outline"  data-to="contact">Let's Talk</a>
+      </div>
+    </div>
+    
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="scroll-hint-line"></span>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-text">
+      <span class="section-label reveal">About</span>
+      <h2 class="section-heading reveal delay-1">
+        Building things<br>that <em>matter.</em>
+      </h2>
+
+      <div class="deco-line reveal delay-2"></div>
+
+      <div class="reveal delay-2">
+        <p>
+          I am a <strong>Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning</strong> at East Point College of Engineering and Technology, Bangalore. I have a strong interest in emerging technologies, especially AI, and am passionate about building innovative solutions.
+        </p>
+        <p>
+          I have hands-on experience in developing projects such as AI chatbots, product-based web pages, and user interface designs. With a foundation in HTML and growing technical skills, I am focused on continuously improving my development expertise.
+        </p>
+        <p>
+          I aim to pursue a career in AI-driven technologies and contribute to impactful, real-world applications through creativity, problem-solving, and continuous learning.
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal delay-3">
+      <span class="section-label">Disciplines</span>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-icon">◈</span>
+          <span class="skill-name">AI & Machine Learning</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">⬡</span>
+          <span class="skill-name">Web Development</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">◻</span>
+          <span class="skill-name">UI / UX Design</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">▷</span>
+          <span class="skill-name">Video Direction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <hr class="hr" />
+
+    <span class="section-label reveal">Selected Work</span>
+    <h2 class="section-heading reveal delay-1">
+      Projects &amp;<br><em>Experiments.</em>
+    </h2>
+
+    <p class="category-label reveal">API &amp; AI Engineering</p>
+
+    <div class="cards-grid">
+      <article class="card reveal delay-1">
+        <p class="card-tag">AI · Conversational UI</p>
+        <h3 class="card-title">DD Chatbot</h3>
+        <p class="card-desc">
+          An AI-driven chatbot project focusing on smart interactions, seamless UI layout, and robust user convenience.
+        </p>
+        <a href="https://ai-chatbot-flame-six-56.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Live Demo
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="card reveal delay-2">
+        <p class="card-tag">Development Tools</p>
+        <h3 class="card-title">Online Compiler</h3>
+        <p class="card-desc">
+          A web-based DX-Pro IDE built to compile code directly in the browser, serving as an accessible programming terminal.
+        </p>
+        <a href="https://david-262006.github.io/DX-Pro-IDE/" target="_blank" rel="noopener noreferrer" class="card-btn">
+          Live Demo
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <p class="category-label reveal" style="margin-top:2.8rem;">UI/UX Design &amp; Web</p>
+
+    <div class="cards-grid">
+      <article class="card reveal delay-1">
+        <p class="card-tag">Product Design · Web</p>
+        <h3 class="card-title">Healix HealthPlus</h3>
+        <p class="card-desc">
+          A sleek, modern interface design for a product-based web page showcasing a next-generation health tracking band.
+        </p>
+        <a href="https://david-262006.github.io/Healix-HealthPlus-Band/" target="_blank" rel="noopener noreferrer" class="card-btn">
+          View Design
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="card reveal delay-2">
+        <p class="card-tag">Technical UI</p>
+        <h3 class="card-title">DX Mirror Terminal</h3>
+        <p class="card-desc">
+          An institutional dashboard interface prioritizing clean data visualization and a professional, tech-forward aesthetic.
+        </p>
+        <a href="https://david-262006.github.io/DX-Institutional-Mirror-Terminal/" target="_blank" rel="noopener noreferrer" class="card-btn">
+          View Design
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section id="video">
+    <hr class="hr" style="grid-column:1/-1" />
+
+    <div class="video-text">
+      <span class="section-label reveal">Videography</span>
+      <h2 class="section-heading reveal delay-1">
+        Visual<br><em>Storytelling.</em>
+      </h2>
+
+      <div class="deco-line reveal delay-2"></div>
+
+      <div class="reveal delay-2">
+        <p>
+          Video is where I feel most cinematic. I approach every project
+          like a director — understanding the narrative before picking up a camera.
+        </p>
+        <p>
+          From high-energy event coverage for Hackoverse to stylized content, my work lives at the intersection of emotion and precision.
+        </p>
+      </div>
+
+      <a href="https://www.instagram.com/hackoverse_club?igsh=Y25lZGpqbDBwajVz" target="_blank" rel="noopener noreferrer" class="video-ig-btn reveal delay-3">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+        </svg>
+        Hackoverse Instagram
+      </a>
+    </div>
+
+    <div class="reveal delay-2">
+      <div class="reel-list">
+        <a href="https://www.instagram.com/reel/DVeIWfPEqtC/?igsh=czJ6N2IxejQ5dXV2" target="_blank" rel="noopener noreferrer" class="reel-item">
+          <div>
+            <p class="reel-title">Featured Reel 1</p>
+            <p class="reel-sub">Event Coverage · Direction</p>
+          </div>
+          <div class="reel-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DQuB5r2idQr/?igsh=b3ptdHRqbG9nZWU5" target="_blank" rel="noopener noreferrer" class="reel-item">
+          <div>
+            <p class="reel-title">Featured Reel 2</p>
+            <p class="reel-sub">Cinematography · Edit</p>
+          </div>
+          <div class="reel-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DQrZpK-DXka/?igsh=ZDVrOHBscDRnN2Zh" target="_blank" rel="noopener noreferrer" class="reel-item">
+          <div>
+            <p class="reel-title">Featured Reel 3</p>
+            <p class="reel-sub">Storytelling · Visuals</p>
+          </div>
+          <div class="reel-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DU8S1sBCQVQ/?igsh=MWtsdTA2ZjgwMGwzaw==" target="_blank" rel="noopener noreferrer" class="reel-item">
+          <div>
+            <p class="reel-title">Featured Reel 4</p>
+            <p class="reel-sub">Creative · Post-Production</p>
+          </div>
+          <div class="reel-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <span class="section-label reveal">Get in Touch</span>
+
+    <h2 class="contact-heading reveal delay-1">
+      Let's build<br>something <em>great.</em>
+    </h2>
+
+    <p class="contact-sub reveal delay-2">
+      Looking for AI solutions, UI designs, or creative collaborations? Reach out!
+    </p>
+
+    <div class="contact-details reveal delay-3">
+      <a href="mailto:david.sdd2679@gmail.com" class="contact-link">david.sdd2679@gmail.com</a>
+      <span class="contact-location">Bangalore, India</span>
+    </div>
+
+    <div class="contact-socials reveal delay-4">
+      <a href="https://www.linkedin.com/in/s-david-478789322?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        LinkedIn
+      </a>
+
+      <a href="https://github.com/DAVID-262006" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+        GitHub
+      </a>
+
+      <a href="https://www.instagram.com/mr.d__26?igsh=MXN5a2pvbHA1dnA1Yw==" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 S. DAVID. All rights reserved.</span>
+    <span>Designed &amp; built with precision.</span>
+  </footer>
+
+  <script src="anim.js"></script>
+
+</body>
+</html>
